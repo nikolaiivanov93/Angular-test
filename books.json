@@ -1,0 +1,131 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Веб-приложения на JavaScript",
+      "description": "",
+      "discount": "",
+      "picture": "1",
+      "language": "русский",
+      "pages": 284,
+      "coverType": "твердый переплет",
+      "size": "125х200",
+      "weight": "0.95",
+      "publisher": "O'Reilly",
+      "yearPublisher": 2012,
+      "isbn": "978-6-459-01504-1",
+      "hidden": false,
+      "filter": "javaScript",
+      "author": "Алекс Маккоу"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript сильные стороны",
+      "description": "",
+      "discount": "",
+      "picture": "2",
+      "language": "русский",
+      "pages": 174,
+      "coverType": "твердый переплет",
+      "size": "125х200",
+      "weight": "0.70",
+      "publisher": "O'Reilly",
+      "yearPublisher": 2012,
+      "isbn": "978-5-459-01263-7",
+      "hidden": false,
+      "filter": "javaScript",
+      "author": "Дуглас Крокфорд"
+    },
+    {
+      "id": 3,
+      "title": "Linux API. Исчерпывающее руководство",
+      "description": "",
+      "discount": "",
+      "picture": "3",
+      "language": "русский",
+      "pages": 1245,
+      "coverType": "твердый переплет",
+      "size": "135х210",
+      "weight": "1.45",
+      "publisher": "Питер",
+      "yearPublisher": 2019,
+      "isbn": "978-5-4461-0985-2",
+      "hidden": false,
+      "filter": "linux",
+      "author": "Майкл Керриск"
+    },
+    {
+      "id": 4,
+      "title": "Linux в действии",
+      "description": "",
+      "discount": "",
+      "picture": "4",
+      "language": "русский",
+      "pages": 412,
+      "coverType": "твердый переплет",
+      "size": "130х210",
+      "weight": "1.03",
+      "publisher": "Питер",
+      "yearPublisher": 2019,
+      "isbn": "978-5-4461-1199-2",
+      "hidden": false,
+      "filter": "linux",
+      "author": "Девид Клинтон"
+    },
+    {
+      "id": 5,
+      "title": "Чистая архитектура",
+      "description": "",
+      "discount": "",
+      "picture": "5",
+      "language": "русский",
+      "pages": 626,
+      "coverType": "твердый переплет",
+      "size": "135х200",
+      "weight": "1.15",
+      "publisher": "Питер",
+      "yearPublisher": 2018,
+      "isbn": "978-5-4461-0772-8",
+      "hidden": false,
+      "filter": "linux",
+      "author": "Роберт Мартин"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "firstName": "Алекс",
+      "lastName": "Маккоу",
+      "middleName": "",
+      "photo": ""
+    },
+    {
+      "id": 2,
+      "firstName": "Дуглас",
+      "lastName": "Крокфорд",
+      "middleName": "",
+      "photo": ""
+    },
+    {
+      "id": 3,
+      "firstName": "Майкл",
+      "lastName": "Керриск",
+      "middleName": "",
+      "photo": ""
+    },
+    {
+      "id": 4,
+      "firstName": "Девид",
+      "lastName": "Клинтон",
+      "middleName": "",
+      "photo": ""
+    },
+    {
+      "id": 5,
+      "firstName": "Роберт",
+      "lastName": "Мартин",
+      "middleName": "",
+      "photo": ""
+    }
+  ]
+}
