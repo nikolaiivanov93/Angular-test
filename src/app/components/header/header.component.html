@@ -7,8 +7,10 @@
       id="search" 
       name="search"
       placeholder="Search..."
+      [(ngModel)]="term"
+      (ngModelChange)="onTermChange()"
     >
-    <div class="w-full h-full border border-gray-700 absolute top-1/2 left-1/2 rounded-full search-button flex justify-center items-center">
+    <div class="w-full h-full absolute top-1/2 left-1/2 rounded-full search-button flex justify-center items-center">
       <svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 3a8 8 0 1 0 0 16 8 8 0 1 0 0-16z"></path>
         <path d="m21 21-4.35-4.35"></path>

@@ -10,18 +10,19 @@
         *ngIf="showFilterAuthors"
         class="mt-2 flex flex-col items-start"
       >
-        <div class="text-sm leading-7">Все</div>
+        <div class="text-sm leading-7" (click)="filter('all')">Все</div>
         <div 
           class="text-sm leading-7"
           *ngFor="let author of authors; let i = index"
-        >{{ author.firstName + author.lastName }}
+          (click)="filter(author.firstName + ' ' + author.lastName)"
+        >{{ author.firstName + ' ' + author.lastName }}
         </div>
       </div>
     </div>
   </div>
   <div class="flex justify-center items-start w-full flex-wrap">
     <div class="flex flex-col justify-center items-start w-44 mx-3" 
-      *ngFor="let book of books; let i = index"
+      *ngFor="let book of books | filterBooks: bookService.filterBooks$.value | filterAuthor: bookService.filterAuthor$.value; let i = index"
     >
       <img class="h-60 overflow-hidden" [src]="'../../../assets/img/'+ book.picture +'.jpg'" alt="book">
       <h3 class="text-center w-full pt-2 font-bold text-sm">{{ book.title }}</h3>

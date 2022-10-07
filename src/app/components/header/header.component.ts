@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { BooksService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  term: string = '';
 
-  constructor() { }
+  constructor(
+    public bookService: BooksService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onTermChange(): void {
+    // console.log(this.term);
+    this.bookService.filterBooks(this.term);
   }
 
 }

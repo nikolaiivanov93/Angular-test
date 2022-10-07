@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/services/http.service';
 import { Books } from 'src/app/models/books';
-import { Authors } from 'src/app/models/authors';
+import { Author } from 'src/app/models/authors';
 
 @Component({
   selector: 'app-all-books',
@@ -12,7 +12,7 @@ import { Authors } from 'src/app/models/authors';
 export class AllBooksComponent implements OnInit {
 
   books: Books[] = [];
-  authors: Authors[] = [];
+  authors: Author[] = [];
   title: string = '';
   showFilterAuthors: boolean = false;
  
@@ -27,10 +27,14 @@ export class AllBooksComponent implements OnInit {
         this.books[i].title = book.title.length > 26 ? book.title.slice(0, 26) + '...' : book.title;
       })
     })
-    this.bookService.getAllAuthors().subscribe((data: Authors[]) => {
+    this.bookService.getAllAuthors().subscribe((data: Author[]) => {
       this.authors = data;
       console.log(this.authors);
     })
+    // console.log(this.bookService.filter$);
   }
 
+  filter(author: string): void {
+    this.bookService.filterAuthor(author);
+  }
 }

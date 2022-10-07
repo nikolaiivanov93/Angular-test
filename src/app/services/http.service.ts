@@ -1,24 +1,35 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
-import {catchError, delay, Observable, retry, tap, throwError} from 'rxjs';
+import {BehaviorSubject, catchError, delay, Observable, retry, Subject, tap, throwError} from 'rxjs';
 import { Books } from '../models/books';
-import { Authors } from '../models/authors';
+import { Author } from '../models/authors';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-
+  // filter$: Observable<string> = 'all';
   constructor(
     private http: HttpClient,
   ) { }
 
-  books: Books[] = []
+  books$ = new Subject<Books[]>();
+  filterBooks$ = new BehaviorSubject('');
+  filterAuthor$ = new BehaviorSubject('all');
 
   getAllBooks(): Observable<Books[]> {
-    return this.http.get<Books[]>('http://localhost:3001/books')
+    this.http.get<Books[]>('http://localhost:3001/books').subscribe(data => {
+      this.books$.next(data);
+    })
+    return this.books$;
   }
-  getAllAuthors(): Observable<Authors[]> {
-    return this.http.get<Authors[]>('http://localhost:3001/authors')
+  getAllAuthors(): Observable<Author[]> {
+    return this.http.get<Author[]>('http://localhost:3001/authors')
+  }
+  filterBooks(search: string) {
+    this.filterBooks$.next(search);
+  }
+  filterAuthor(name: string) {
+    this.filterAuthor$.next(name);
   }
 }
