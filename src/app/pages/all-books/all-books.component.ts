@@ -15,6 +15,7 @@ export class AllBooksComponent implements OnInit {
   authors: Author[] = [];
   title: string = '';
   showFilterAuthors: boolean = false;
+  activeAuthor: number = 0;
  
   constructor(
     public bookService: BooksService,
@@ -34,7 +35,8 @@ export class AllBooksComponent implements OnInit {
     // console.log(this.bookService.filter$);
   }
 
-  filter(author: string): void {
+  filter(author: string, id: number): void {
+    this.activeAuthor = id;
     this.bookService.filterAuthor(author);
   }
 }

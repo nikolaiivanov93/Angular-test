@@ -1,20 +1,38 @@
 <div class="container columns-2 flex justify-between pt-16">
   <div class="">
     <div class="bg-white rounded-xl w-64 h-auto p-3 flex flex-col items-start">
-      <h3 
+      <div 
         (click)="showFilterAuthors = !showFilterAuthors"
-        class="w-full text-sm uppercase text-left text-gray-400 font-bold"
-      >Авторы <div><span></span><span></span></div>
-      </h3>
+        class="w-full flex justify-between items-center"
+      >
+        <h3 
+          class="text-sm uppercase text-left text-gray-400 font-bold"
+        >
+          Авторы
+        </h3> 
+        <div 
+          class="chevron"
+          [class.chevron-active]="showFilterAuthors"
+        >
+          <span></span><span></span>
+        </div>
+      </div>
       <div 
         *ngIf="showFilterAuthors"
         class="mt-2 flex flex-col items-start"
       >
-        <div class="text-sm leading-7" (click)="filter('all')">Все</div>
+        <div 
+          class="text-sm leading-7" 
+          [class.font-bold]="activeAuthor === 0"
+          (click)="filter('all', 0)"
+        >
+          Все
+        </div>
         <div 
           class="text-sm leading-7"
+          [class.font-bold]="author.id === activeAuthor"
           *ngFor="let author of authors; let i = index"
-          (click)="filter(author.firstName + ' ' + author.lastName)"
+          (click)="filter(author.firstName + ' ' + author.lastName, author.id)"
         >{{ author.firstName + ' ' + author.lastName }}
         </div>
       </div>

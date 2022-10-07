@@ -1,0 +1,42 @@
+.chevron {
+  position: relative;
+  transition: 0.3s all;
+  span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    transition: 0.3s all;
+    &:nth-child(odd) {
+      position: absolute;
+      // top: 50%;
+      // transform: translateY(50%);
+      right: 15px;
+      width: 10px;
+      height: 2px;
+      transform: rotate(-45deg);
+      background-color: #000;
+      border-radius: 2px;
+    }
+    &:nth-child(even) {
+      position: absolute;
+      // top: 50%;
+      // transform: translateY(50%);
+      right: 9px;
+      width: 10px;
+      height: 2px;
+      transform: rotate(45deg);
+      background-color: #000;
+      border-radius: 2px;
+    }
+  }
+  &-active {
+    span {
+      &:nth-child(odd) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(even) {
+        transform: rotate(-45deg);
+      }
+    }
+  } 
+}
