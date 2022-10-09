@@ -1,0 +1,39 @@
+<div *ngIf="book" class="flex justify-center">
+  <div class="container columns-2 flex justify-between items-start w-full">
+    <img 
+      *ngIf="book.picture !== ''"
+      class="mr-12 w-[30%]" 
+      [src]="'../../../assets/img/' + book.picture + '.jpg'" 
+      [alt]="book.title">
+    <app-image-not-found *ngIf="book.picture === ''"></app-image-not-found>
+    <div class="flex flex-col w-full">
+      <h2 class="text-left font-black text-3xl">{{ book.title }}</h2>
+      <a routerLink="/author/{{ book.author }}">
+        <h5 class="font-light text-sm mt-2">{{ book.author }}</h5>
+      </a>
+      <h5 class="font-thin text-sm mt-5 text-gray-700">Описание</h5>
+      <p class="text-sm font-light mt-5">{{ book.description }}</p>
+      <h5 class="font-thin text-sm mt-5 text-gray-700">Харктеристики</h5>
+      <div class="text-sm font-light mt-2">
+        <span class="text-gray-700 font-thin">ISBN:</span> 
+        {{ book.isbn }}
+      </div>
+      <div class="text-sm font-light mt-2">
+        <span class="text-gray-700 font-thin">Количество страниц:</span> 
+        {{ book.pages }}
+      </div>
+      <div class="text-sm font-light mt-2">
+        <span class="text-gray-700 font-thin">Формат:</span> 
+        {{ book.size }} мм
+      </div>
+      <div class="text-sm font-light mt-2">
+        <span class="text-gray-700 font-thin">Обложка:</span> 
+        {{ book.coverType }}
+      </div>
+      <div class="text-sm font-light mt-2">
+        <span class="text-gray-700 font-thin">Вес:</span> 
+        {{ book.weight }} кг
+      </div>
+    </div>
+  </div>
+</div>

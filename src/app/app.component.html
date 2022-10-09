@@ -1,4 +1,8 @@
 <div class="flex flex-col w-full h-screen">
   <app-header class="p-3 flex justify-center items-center"></app-header>
-  <app-all-books class="h-full bg-orange-100 flex justify-center"></app-all-books>
+  <div class="h-full bg-orange-100">
+    <app-navigation class="py-4 flex justify-center"></app-navigation>
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <app-all-books class="h-full bg-orange-100 flex justify-center"></app-all-books> -->
 </div>

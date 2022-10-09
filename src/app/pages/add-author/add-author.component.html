@@ -1,0 +1,73 @@
+<div class="flex justify-center item-start">
+  <div class="container">
+    <form 
+      class="w-[50%] mt-6"
+      [formGroup]="myForm"
+      (ngSubmit)="submit()"
+    >
+      <div class="flex flex-col">
+        <label class="text-xs text-gray-700 mb-1">Имя</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="firstName">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['firstName'].invalid &&
+          myForm.controls['firstName'].touched
+        "
+      >
+        Введите имя
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Фамилия</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="lastName">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['lastName'].invalid &&
+          myForm.controls['lastName'].touched
+        "
+      >
+        Введите фамилию
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Отчество</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="middleName">
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Описание</label>
+        <textarea
+          cols="30" 
+          rows="10"
+          class="px-2 font-light rounded resize-none"
+          type="text"
+          formControlName="description"
+        >
+        </textarea>
+      </div>
+      <div class="flex flex-col justify-center items-center mt-5 w-[200px]">
+        <button
+          class="rounded-full w-[200px] h-[40px] bg-amber-500 text-white text-sm uppercase"
+          [disabled]="myForm.invalid"
+        >
+          Опубликовать
+        </button>
+        <div 
+          *ngIf="requestDone"
+          class="text-sm font-light text-green-600 mt-2">
+          Автор опубликован
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

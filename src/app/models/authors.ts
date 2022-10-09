@@ -3,5 +3,6 @@ export interface Author {
   firstName: string,
   lastName: string,
   middleName: string,
+  description: string,
   photo: string
 }

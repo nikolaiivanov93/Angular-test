@@ -1,0 +1,11 @@
+<div class="container flex justify-start items-center">
+  <nav>
+    <a 
+      *ngFor="let path of pathService.path; let i = index"
+      [routerLink]="path.link" 
+      (click)="changePath(i)"
+      class="text-xs text-gray-400 font-light">
+      {{path.title}} <span *ngIf="i+1 < pathService.path.length" class="mx-2">></span>
+    </a>
+  </nav>
+</div>

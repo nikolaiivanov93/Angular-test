@@ -1,0 +1,16 @@
+<div *ngIf="author" class="flex justify-center">
+  <div class="container columns-2 flex justify-between items-start w-full h-full">
+    <div class="mr-12 w-[30%] overflow-hidden">
+      <img 
+        *ngIf="author.photo !== 'none'"
+        class="w-full"
+        [src]="'../../../assets/img/authors/' + author.photo + '.jpeg'" 
+        [alt]="author.firstName + author.lastName">
+      <app-image-not-found *ngIf="author.photo == 'none'"></app-image-not-found>
+    </div>
+    <div class="flex flex-col w-full">
+      <h2 class="text-left font-black text-3xl">{{ author.firstName + ' ' + author.lastName }}</h2>
+      <p class="text-sm font-light mt-5">{{ author.description }}</p>
+    </div>
+  </div>
+</div>

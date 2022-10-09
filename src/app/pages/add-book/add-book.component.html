@@ -1,0 +1,185 @@
+<div class="flex justify-center item-start">
+  <div class="container">
+    <form 
+      class="w-[50%] mt-6"
+      [formGroup]="myForm"
+      (ngSubmit)="submit()"
+    >
+      <div class="flex flex-col">
+        <label class="text-xs text-gray-700 mb-1">Наименование</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="title">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['title'].invalid &&
+          myForm.controls['title'].touched
+        "
+      >
+        Введите наименование
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Описание</label>
+        <textarea
+          cols="30" 
+          rows="10"
+          class="px-2 font-light rounded resize-none"
+          type="text"
+          formControlName="description"
+        >
+        </textarea>
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Язык</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="language">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['language'].invalid &&
+          myForm.controls['language'].touched
+        "
+      >
+        Укажите язык
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Количество страниц</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="pages">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['pages'].invalid &&
+          myForm.controls['pages'].touched
+        "
+      >
+        Укажите количество страниц
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Тип обложки</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="coverType">
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Формат</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="size">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['size'].invalid &&
+          myForm.controls['size'].touched
+        "
+      >
+        Укажите формат
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Вес</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="weight">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['weight'].invalid &&
+          myForm.controls['weight'].touched
+        "
+      >
+        Укажите вес
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Издатель</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="publisher">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['publisher'].invalid &&
+          myForm.controls['publisher'].touched
+        "
+      >
+        Укажите издателя
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Год публикации</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="yearPublisher">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['yearPublisher'].invalid &&
+          myForm.controls['yearPublisher'].touched
+        "
+      >
+        Укажите год публикации
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">ISBN</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="isbn">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['isbn'].invalid &&
+          myForm.controls['isbn'].touched
+        "
+      >
+        Укажите ISBN
+      </div>
+      <div class="flex flex-col mt-3">
+        <label class="text-xs text-gray-700 mb-1">Автор</label>
+        <input 
+          class="px-2 font-light rounded h-[32px]"
+          type="text"
+          formControlName="author">
+      </div>
+      <div
+        class="text-sm font-light text-red-600"
+        *ngIf="
+          myForm.controls['author'].invalid &&
+          myForm.controls['author'].touched
+        "
+      >
+        Укажите автора
+      </div>
+      <div class="flex flex-col justify-center items-center mt-5 w-[200px]">
+        <button
+          class="rounded-full w-[200px] h-[40px] bg-amber-500 text-white text-sm uppercase"
+          [disabled]="myForm.invalid"
+        >
+          Опубликовать
+        </button>
+        <div 
+          *ngIf="requestDone"
+          class="text-sm font-light text-green-600 mt-2">
+          Книга опубликована
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
